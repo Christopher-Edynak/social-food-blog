@@ -1,5 +1,5 @@
 <?php 
   include 'backend/init.php';
-  //header("location: login.php");
+  header("location: login.php");
 
 ?>

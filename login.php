@@ -1,3 +1,21 @@
+<?php 
+  include 'backend/init.php';
+
+  if($_SERVER['REQUEST_METHOD'] === "POST"){
+    if(isset($_POST['login'])){
+      $email    = Validate::escape($_POST['email']);
+      $password = $_POST['password'];
+
+      if(!empty($email) && !empty($password)){
+        if(!Validate::filterEmail($email)){
+          $error = "Invalid email format...";
+        }
+      }else{
+        $error = "Please enter your valid credentials...";
+      }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +33,7 @@
 	<div class="sign-in-wrapper flex fl-1">
  		<div class="sign-in-box flex fl-c">
 			<div class="sign-up-head">
-				<span>C&E<i class="fa-solid fa-utensils"></i></span>
+				<span><i class="fa-solid fa-burger"></i>C&E<i class="fa-solid fa-utensils"></i></span>
 			</div>
 			<form method="post">
 	 			<div class="sign-body">
@@ -33,7 +51,11 @@
 							<span class="in-span">
 								<i class="fas fa-lock"></i>
 							</span>
-							<div>Display errors</div>
+							<div><?php
+                      if(isset($error)){
+                        echo $error;
+                      }
+                    ?></div>
 						</div>
 					</div>
 				</div>
