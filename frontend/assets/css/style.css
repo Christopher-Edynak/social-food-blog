@@ -926,14 +926,14 @@ font-weight: normal;
 .footer-inner{
 	color: #ccc;
 	font-size: 12px;
-	padding: 5px 5px
+	padding: 5px 5px;
 	margin:5px;
 }
  
 .footer-inner ul li{
 	display: inline-block;
 	color: #ccc;
-	padding: 5px 5px
+	padding: 5px 5px;
 	margin:5px;
 }
 .footer-inner ul li a{
@@ -1096,7 +1096,7 @@ font-weight: normal;
 	font-size: 17px;
 }
 .bt-title{
-	display: ;
+	display: none;
 }
 .bn-title{
 	display: none;
