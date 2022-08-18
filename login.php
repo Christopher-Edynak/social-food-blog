@@ -11,7 +11,13 @@
           $error = "Invalid email format...";
         }else{
           if($user = $userObj->emailExist($email)){
-            echo "Welcome user ". $user->last_name;
+            $hash = $user->password;
+            if(password_verify($password, $hash)){
+              $_SESSION['user_id'] = $user->user_id;
+              header("Location: frontend/dashboard.php");
+            }else{
+              $error = "Incorrect credentials...";
+            }
           }
         }
       }else{
