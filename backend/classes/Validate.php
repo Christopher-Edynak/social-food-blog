@@ -10,5 +10,6 @@
     public static function filterEmail($email){
       return filter_var($input, FILTER_VALIDATE_EMAIL);
     }
+
   }
 ?>
