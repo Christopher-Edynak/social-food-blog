@@ -9,6 +9,8 @@
       if(!empty($email) && !empty($password)){
         if(!Validate::filterEmail($email)){
           $error = "Invalid email format...";
+        }else{
+          //
         }
       }else{
         $error = "Please enter your valid credentials...";
