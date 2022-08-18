@@ -1,12 +1,9 @@
 <?php 
-  $dsn  = 'mysql:host=localhost; dbname=food-blog';
-  $user = 'root';
-  $pass = '';
+  class Database {
+    protected $pdo;
 
-  try{
-    $pdo = new PDO($dsn, $user, $pass);
-  
-  }catch(PDOException $e){
-    echo 'connection error!' . $e;
+    protected function __construct(){
+      $this->pdo = new PDO("mysql:host=".DB_HOST."; dbname=".DB_NAME, DB_USER, DB_PASS);
+    }
   }
 ?>
