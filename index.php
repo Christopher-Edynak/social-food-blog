@@ -1,4 +1,6 @@
 <?php 
-  include 'backend/classes/Database.php';
+  include 'backend/init.php';
   //header("location: login.php");
+
+  echo BASE_URL;
 ?>
