@@ -10,7 +10,9 @@
         if(!Validate::filterEmail($email)){
           $error = "Invalid email format...";
         }else{
-          //
+          if($user = $userObj->emailExist($email)){
+            echo "Welcome user ". $user->last_name;
+          }
         }
       }else{
         $error = "Please enter your valid credentials...";

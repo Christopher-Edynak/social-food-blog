@@ -11,4 +11,6 @@
   define("DB_PASS", "");
   define("BASE_URL", "https://localhost/food-blog/");
 
+  $userObj = new Users;
+  
 ?>
