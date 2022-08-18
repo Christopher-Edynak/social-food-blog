@@ -1,3 +1,35 @@
+<?php 
+  include 'backend/init.php';
+
+  if($userObj->isLoggedIn()){
+    header("Location: frontend/dashboard.php");
+  }
+
+  if($_SERVER['REQUEST_METHOD'] === "POST"){
+    if(isset($_POST['login'])){
+      $email    = Validate::escape($_POST['email']);
+      $password = $_POST['password'];
+
+      if(!empty($email) && !empty($password)){
+        if(!Validate::filterEmail($email)){
+          $error = "Invalid email format...";
+        }else{
+          if($user = $userObj->emailExist($email)){
+            $hash = $user->password;
+            if(password_verify($password, $hash)){
+              $_SESSION['user_id'] = $user->user_id;
+              header("Location: frontend/dashboard.php");
+            }else{
+              $error = "Incorrect credentials...";
+            }
+          }
+        }
+      }else{
+        $error = "Please enter your valid credentials...";
+      }
+    }
+  }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +47,7 @@
 	<div class="sign-in-wrapper flex fl-1">
  		<div class="sign-in-box flex fl-c">
 			<div class="sign-up-head">
-				<span>C&E<i class="fa-solid fa-utensils"></i></span>
+				<span><i class="fa-solid fa-burger"></i>C&E<i class="fa-solid fa-utensils"></i></span>
 			</div>
 			<form method="post">
 	 			<div class="sign-body">
@@ -33,7 +65,11 @@
 							<span class="in-span">
 								<i class="fas fa-lock"></i>
 							</span>
-							<div>Display errors</div>
+							<div><?php
+                      if(isset($error)){
+                        echo $error;
+                      }
+                    ?></div>
 						</div>
 					</div>
 				</div>
