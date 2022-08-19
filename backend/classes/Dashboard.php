@@ -121,6 +121,17 @@
           }
           return $return;
         }
+
+        public function getLabelsMenu($blogID){
+          $stmt = $this->db->prepare("SELECT * FROM `labels` WHERE `blogID` = :blogID GROUP BY `labelName`");
+          $stmt->bindParam(":blogID", $blogID, PDO::PARAM_INT);
+          $stmt->execute();
+          $labels = $stmt->fetchAll(PDO::FETCH_OBJ);
+    
+          foreach($labels as $label){
+            echo '<li class="label" data-id="'.$label->ID.'"><a href="javascript:;">'.$label->labelName.'</a></li>';
+          }
+        }
     }
             
 ?>

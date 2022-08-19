@@ -163,7 +163,7 @@
 			<div class="footer-inner">
 				<ul>
 					<li><a href="#">Terms of Service</a></li>|
-					<li><a href="#">Privacy</a></li>|
+					<li><a href="#">Privacy Policy</a></li>|
 					<li><a href="#">Content Policy</a></li>
 				</ul>
 			</div>
@@ -193,7 +193,7 @@
 								<li>
 									<a href="javascript:;" id="newLabel">New label...</a>
 								</li>
-								 {LABEL MENU}
+								 <?php $dashObj->getLabelsMenu($blog->blogID); ?>
 							</ul>
 						</div>
 
