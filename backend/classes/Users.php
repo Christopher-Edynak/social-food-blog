@@ -35,6 +35,24 @@
       return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
+    public function get($table, $fields = array()){
+      $where = " WHERE ";
+      //sql query
+      $sql = "SELECT * FROM `{$table}`";
+      foreach($fields as $key => $value){
+          $sql .= "{$where} `{$key}` = :{$key}";
+          $where = " AND ";
+      }
+
+      if($stmt = $this->db->prepare($sql)){
+          foreach($fields as $key => $value){
+              $stmt->bindValue(":{$key}", $value);
+          }
+          $stmt->execute();
+          return $stmt->fetch(PDO::FETCH_OBJ);
+      }
+    }
+
 
   }
 
