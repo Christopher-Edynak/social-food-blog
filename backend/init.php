@@ -12,5 +12,6 @@
   define("BASE_URL", "http://localhost/food-blog/");
 
   $userObj = new Users;
+  $dashObj = new Dashboard;
   
 ?>
