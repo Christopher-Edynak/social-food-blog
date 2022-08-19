@@ -9,7 +9,7 @@
   define("DB_NAME", "food-blog");
   define("DB_USER", "root");
   define("DB_PASS", "");
-  define("BASE_URL", "https://localhost/food-blog/");
+  define("BASE_URL", "http://localhost/food-blog/");
 
   $userObj = new Users;
   

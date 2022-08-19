@@ -17,7 +17,7 @@
           if($user = $userObj->emailExist($email)){
             $hash = $user->password;
             if(password_verify($password, $hash)){
-              $_SESSION['user_id'] = $user->user_id;
+              $_SESSION['user_id'] = $user->userID;
               header("Location: frontend/dashboard.php");
             }else{
               $error = "Incorrect credentials...";
@@ -33,7 +33,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login - C&E Food Social</title>
+	<title>Login - C&E Food & Recipe Social</title>
 	<link rel="stylesheet" href="frontend/assets/css/style.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
 

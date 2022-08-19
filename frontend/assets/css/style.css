@@ -926,14 +926,14 @@ font-weight: normal;
 .footer-inner{
 	color: #ccc;
 	font-size: 12px;
-	padding: 5px 5px;
+	padding: 5px 5px
 	margin:5px;
 }
  
 .footer-inner ul li{
 	display: inline-block;
 	color: #ccc;
-	padding: 5px 5px;
+	padding: 5px 5px
 	margin:5px;
 }
 .footer-inner ul li a{
@@ -1096,7 +1096,7 @@ font-weight: normal;
 	font-size: 17px;
 }
 .bt-title{
-	display: none;
+	display: ;
 }
 .bn-title{
 	display: none;
@@ -1793,7 +1793,7 @@ color:
 .sign-up-head{
 	width: 100%;
 	text-align: center;
-	font-size: 80px;
+	font-size: 140px;
 	color:#fff;
 	background:#ff5722;
 	padding: 20px 0px;
@@ -1802,7 +1802,7 @@ color:
 .sign-up-head div span i{
 	transform: rotate(-20deg);
 	color:#f8ab16;
-	font-size: 100px;
+	font-size: 160px;
 }
 
 .avatar-div{
