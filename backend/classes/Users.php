@@ -53,6 +53,22 @@
       }
     }
 
+    public function create($table, $fields = array()){
+      $columns = implode(", ", array_keys($fields));
+      $values = ':'.implode(", :", array_keys($fields));
+
+      $sql = "INSERT INTO {$table} ({$columns}) VALUES ({$values})";
+
+      if($stmt = $this->db->prepare($sql)){
+        foreach($fields as $key => $value){
+          $stmt->bindValue(":{$key}", $value);
+        }
+        
+        $stmt->execute();
+        return $this->db->lastInsertId();
+      }
+
+    }
 
   }
 

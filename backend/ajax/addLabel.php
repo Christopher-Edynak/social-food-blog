@@ -21,6 +21,8 @@
 
                 }else{
                   //Create Label
+                  //CRUD
+                  $userObj->create('labels', ['labelName' => $newLabel, 'postID' => $postID, 'blogID' => $blogID]);
                 }
               }
             }
