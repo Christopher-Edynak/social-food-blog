@@ -97,7 +97,7 @@
 						<img src="<?php echo BASE_URL.$user->profileImage; ?>">
 					</div>
 					<div class="fl-1">Using C&E Food & Recipe as 
-						<span class="bold"><?php echo $user->username; ?></span>
+						<span class="bold"><?php echo $user->first_name; ?>&nbsp;<?php echo $user->last_name; ?></span>
 					</div>
 				</div>
 			</div>
@@ -191,7 +191,7 @@
 						<div class="label-menu">
 							<ul>
 								<li>
-									<a href="javascript:;" id="newLabel">New label...</a>
+									<a href="javascript:;" id="newLabel" data-blog="<?php echo $blog->blogID; ?>">New label...</a>
 								</li>
 								 <?php $dashObj->getLabelsMenu($blog->blogID); ?>
 							</ul>
