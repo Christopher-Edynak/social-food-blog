@@ -106,7 +106,7 @@
 				<div></div>
 				<div class="fl-1">
 					<div>
-					<input type="text" id="postSearch">
+					<input type="text" id="postSearch" data-blog="<?php echo $blog->blogID; ?>">
 					<i class="fas fa-search"></i> 
 					</div>
 				</div>
@@ -246,6 +246,7 @@
       <script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/labelMenu.js"></script>
 			<script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/postStatus.js"></script>
 			<script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/removePosts.js"></script>
+			<script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/searchPosts.js"></script>
 		</div>
 		<!--MAIN-Right-inner-DIV-ENDS-HERE-->
 		</div>
