@@ -7,7 +7,6 @@
   if(isset($_GET['blogID']) && !empty($_GET['blogID'])){
     $blogID = (int) $_GET['blogID'];
     $blog   = $dashObj->blogAuth($blogID);
-		//$userObj->create('labels', ['labelName' => 'label', 'postID' => 1]);
 
     if(!$blog){
       header('Location: 404');
