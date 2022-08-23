@@ -18,7 +18,7 @@
 						 		$userObj->update('posts', ['postStatus' => 'draft'], ['postID' => $post->postID, 'blogID' => $blog->blogID]);
 
 							}else{
-								echo 'You don\'t have the rights to preform this action!';
+								echo 'You don\'t have the rights to perform this action!';
 								break;
 							}
 						}else{
