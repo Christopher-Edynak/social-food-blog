@@ -15,6 +15,7 @@
 						if($blog){
 							if($blog->role === "Admin" OR $blog->userID === $post->authorID){
                                 //update post
+                                $userObj->update('posts', ['postStatus' => 'published'], ['postID' => $post->postID, 'blogID' => $blog->blogID]);
 
 							}else{
 								echo 'You don\'t have rights to perform this action!';
