@@ -14,6 +14,8 @@
 
   }
 
+	$dashObj->getPaginationPages('1', 'Post', '', $blog->blogID);
+
 ?>
 
 <!DOCTYPE HTML>
