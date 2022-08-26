@@ -127,14 +127,14 @@
 					<li class="active"><span><i class="fas fa-newspaper"></i></span><a href="{BASE_URL}admin/blogID/{BLOG-ID}/dashboard/">Posts</a></li>
 					<ul>
 						<li id="active" class="active">
-							<a href="{BASE_URL}admin/blogID/{BLOG-ID}/dashboard/">All<?php $dashObj->getPostsCount('Post', '', $blog->blogID);?>
+							<a href="<?php echo BASE_URL; ?>admin/blogID/<?php echo $blog->blogID; ?>/dashboard/">All<?php $dashObj->getPostsCount('Post', '', $blog->blogID);?>
 							</a>
 						</li>
 						<li>
-							<a href="?type=draft" id="draft">Draft{COUNT}</a>
+							<a href="?type=draft" id="draft">Draft<?php $dashObj->getPostsCount('Post', 'draft', $blog->blogID);?></a>
 						</li>
 						<li>
-							<a href="?type=published" id="published">Published{COUNT}</a>
+							<a href="?type=published" id="published">Published<?php $dashObj->getPostsCount('Post', 'published', $blog->blogID);?></a>
 						</li>
 					</ul>
 					
@@ -240,7 +240,15 @@
 			<!--main-right-Content-->
 			<div id="posts" class="main-right-content fl-4">
 				<!-- POSTS -->
-				<?php $dashObj->getAllPosts('Post','',$blog->blogID); ?>
+				<?php 
+					if(strpos($_SERVER['REQUEST_URI'], '?type=published')){
+						$dashObj->getAllPosts('Post', 'published', $blog->blogID);
+					}else if(strpos($_SERVER['REQUEST_URI'], '?type=draft')){
+						$dashObj->getAllPosts('Post', 'draft', $blog->blogID);
+					}else{
+						$dashObj->getAllPosts('Post', '', $blog->blogID);
+					}
+				?>
  			</div>
  			<!-- JS FILES -->
       <script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/labelMenu.js"></script>
