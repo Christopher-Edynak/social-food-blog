@@ -14,8 +14,6 @@
 
   }
 
-	$dashObj->getPaginationPages('1', 'Post', '', $blog->blogID);
-
 ?>
 
 <!DOCTYPE HTML>
@@ -218,7 +216,15 @@
 
 						<div class="p-num">
 							<ul id="page-num">
-				 				{PAGE NUMBERS}
+				 				<?php 
+									if(strpos($_SERVER['REQUEST_URI'], '?type=published')){
+										$dashObj->getPaginationPages('1', 'Post', 'published', $blog->blogID);
+									}else if(strpos($_SERVER['REQUEST_URI'], '?type=draft')){
+										$dashObj->getPaginationPages('1', 'Post', 'draft', $blog->blogID);
+									}else{
+										$dashObj->getPaginationPages('1', 'Post', '', $blog->blogID);
+									}
+								 ?>
 							</ul>
 						</div>
 
@@ -257,6 +263,7 @@
 			<script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/postStatus.js"></script>
 			<script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/removePosts.js"></script>
 			<script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/searchPosts.js"></script>
+			<script type="text/javascript" src="<?php echo BASE_URL; ?>frontend/assets/js/postPagination.js"></script>
 		</div>
 		<!--MAIN-Right-inner-DIV-ENDS-HERE-->
 		</div>
