@@ -206,7 +206,7 @@
 				<div class="m-r-header-right flex fl-row">
 					<div>
 					<div>
- 						<button class="br disabled" id="previousPage" disabled="true"><i class="fas fa-chevron-left"></i>
+ 						<button class="br disabled" id="previousPage" disabled="true" data-blog="<?php echo $blog->blogID;?>"><i class="fas fa-chevron-left"></i>
  						</button>
 						
 						<button id="postJumpMenu" class="disabled" disabled="true">
@@ -228,7 +228,7 @@
 							</ul>
 						</div>
 
-						<button class="bl disabled" id="nextPage" disabled="true">
+						<button class="bl disabled" id="nextPage" disabled="true" data-blog="<?php echo $blog->blogID;?>">
 							<i class="fas fa-chevron-right"></i>
 						</button>
 
