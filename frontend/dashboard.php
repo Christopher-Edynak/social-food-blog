@@ -127,7 +127,7 @@
 					<li class="active"><span><i class="fas fa-newspaper"></i></span><a href="{BASE_URL}admin/blogID/{BLOG-ID}/dashboard/">Posts</a></li>
 					<ul>
 						<li id="active" class="active">
-							<a href="{BASE_URL}admin/blogID/{BLOG-ID}/dashboard/">All{COUNT}
+							<a href="{BASE_URL}admin/blogID/{BLOG-ID}/dashboard/">All<?php $dashObj->getPostsCount('Post', '', $blog->blogID);?>
 							</a>
 						</li>
 						<li>
